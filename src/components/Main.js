@@ -4,17 +4,19 @@ import Home from './Home'
 import Trending from './Trending'
 import News from './News'
 import Login from './Login'
+import Register from './Register'
 
 
 const Main = () => (
-  <main>
+  
     <Switch>
-      <Route exact path='/' component={Home}/>
-      <Route path='/trending' component={Trending}/>
-      <Route path='/news' component={News}/>
-      <Route path='/login' component={Login}/>
+      <Route exact path='/' render={(props) => <Home {...props} />} />
+      <Route path='/trending' render={(props) => <Trending {...props} />} />
+      <Route path='/news' render={(props) => <News {...props} />} />
+      <Route path='/login' render={(props) => <Login {...props} />} />
+      <Route path='/register' render={(props) => <Register {...props} />} />
     </Switch>
-  </main>
+  
 )
 
 export default Main
