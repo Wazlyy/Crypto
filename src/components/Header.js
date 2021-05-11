@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Image from "../img/ban.png"
 
 
 const Header = () => (
   <header>
+    <img class="logo-img" src={Image} alt=""/>
     <nav>
         <Link to='/'>Home</Link>
         <Link to='/trending'>Trending View</Link>
