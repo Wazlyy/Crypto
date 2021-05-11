@@ -1,15 +1,35 @@
-import React from 'react'
+import React, { useCallback, useContext} from 'react'
+import { Redirect, withRouter } from 'react-router'
+import app from '../firebase/firebase'
+import { AuthContext } from '../firebase/Auth'
 
 
+const Login = ({history}) => {
+    const handleLogin = useCallback(async event => {
+        event.preventDefault();
+        const { email, password } = event.target.elements;
+        try {
+            await app
+            .auth()
+            .signInWithEmailAndPassword(email.value, password.value);
+            history.push("/login");
+            } catch (error) {
+                alert(error);
+            }
+    }, [history]);
 
-const Login = () => {
+    const { currentUser } = useContext(AuthContext);
+
+    if (currentUser) {
+        return <Redirect to="/login" />;
+    }
     
     return(
         
     <div class="login-wrap">
     <div class="login-html">
         <input id="tab-1" type="radio" name="tab" class="sign-in" checked/><label for="tab-1" class="tab">Se connecter</label>
-        <div class="login-form">
+        <div class="login-form" onSubmit={handleLogin}>
             <div class="sign-in-htm">
                 <div class="group">
                     <label for="user" class="label">Identifiant</label>
@@ -36,7 +56,7 @@ const Login = () => {
         </div>
     </div>
 </div>
-)
-}
+);
+};
 
-export default Login
+export default withRouter(Login);

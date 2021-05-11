@@ -1,23 +1,37 @@
-import React from 'react'
+import React, { useCallback} from 'react'
+import { withRouter } from 'react-router'
+import app from '../firebase/firebase'
 
 
 
-const Register = () => {
+const Register = ({ history}) => {
+    const handleRegister = useCallback(async event => {
+        event.preventDefault();
+        const { email, password } = event.target.elements;
+        try {
+            await app
+            .auth()
+            .createUserWithEmailAndPassword(email.value, password.value);
+            history.push("/trending");
+            } catch (error) {
+                alert(error);
+            }
+    }, [history]);
     
     return(
         
     <div class="login-wrap">
     <div class="login-html">
         <input id="tab-2" type="radio" name="tab" class="sign-up" checked/><label for="tab-2" class="tab">S'inscrire</label>
-        <div class="login-form">
+        <div class="login-form" onSubmit={handleRegister}>
             <div class="sign-up-htm">
                 <div class="group">
                     <label for="user" class="label">Identifiant</label>
-                    <input id="user" type="text" class="input"/>
+                    <input name="email" type="text" class="input"/>
                 </div>
                 <div class="group">
                     <label for="pass" class="label">Mot de passe</label>
-                    <input id="pass" type="password" class="input" data-type="password"/>
+                    <input name="password" type="password" class="input" data-type="password"/>
                 </div>
                 <div class="group">
                     <label for="pass" class="label">Confirmation du mot de passe</label>
@@ -41,4 +55,4 @@ const Register = () => {
 )
 }
 
-export default Register
+export default withRouter(Register);
