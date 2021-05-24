@@ -50,6 +50,7 @@ a {
 	border-top-left-radius: 10px;
 	border-bottom-right-radius: 5px;
 	cursor: pointer;
+	margin-top: 5px;
 }
 
 iframe {
@@ -269,4 +270,33 @@ body {
 	width: 100%;
 	display: flex;
 	justify-content: center;
+}
+
+.form{
+    width: 300px;
+    height: 500px;
+    background-color: white;
+}
+
+input{
+    border-radius: 5px;
+}
+
+footer{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	color: white;
+}
+
+footer button{
+	position: absolute;
+	right: 0;
+	border: none;
+	border-radius: 5px;
+	background-color: orange;
+	color: white;
+	width: 60px;
+	height: 30px;
 }
