@@ -281,3 +281,11 @@ body {
 input{
     border-radius: 5px;
 }
+
+footer{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	color: white;
+}
