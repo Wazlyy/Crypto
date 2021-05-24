@@ -1,14 +1,36 @@
 import React from 'react'
+import app from '../firebase/firebase'
+import "firebase/database";
+//import firebase from 'firebase'
 
 
-const Test = () => {
+const News = () => {
+
+    const comment = app.database().ref('Data/').on('value',function (snap) {
+      //console.log(snap.val());
+
+      snap.forEach(function(element){
+        document.getElementById("com").innerHTML +=`<div>${Object.values(element.val())}</div>`;
+      })
+      //let commentaire = Object.keys(snap.val());
+    
+      //const obj = JSON.parse(commentaire);
+    
+    })
+
+
 
     return( 
-        <div className="tradingview-widget-container tabcontent" id="btc">
-        <div className="charts" id="tradingview_3a24b"></div>
-      </div>
-     )
-  }
+        <>
+        <br></br>
+        <h1>Commentaire</h1>
+        <br></br>
+        <br></br>
+        <div id="com"></div>
+        <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+        </>
+     );
+  };
 
 
-export default Test
+export default News
