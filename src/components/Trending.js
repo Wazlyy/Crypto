@@ -11,7 +11,8 @@ class Trending extends React.Component {
     render() { 
       return (
         <div className="tab">
-      {/* <button className="tablinks" handleClick={() => openView (event, 'btc')} id="defaultOpen">Bitcoin</button>
+          <p>test</p>
+       <button className="tablinks" onClick="openView(event, 'btc')" id="defaultOpen">Bitcoin</button>
       <button className="tablinks" onClick="openView(event, 'eth')">Ethereum</button>
       <button className="tablinks" onClick="openView(event, 'ltc')">Litecoin</button>
       <button className="tablinks" onClick="openView(event, 'ada')">Cardano</button>

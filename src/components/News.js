@@ -24,9 +24,11 @@ const News = () => {
         <>
         <br></br>
         <h1>Commentaire</h1>
-        <br></br>
-        <br></br>
+        <div class="hr"></div>
+        <div class="com-div">
         <div id="com"></div>
+        </div>
+        <div class="hr"></div>
         <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
         </>
      );

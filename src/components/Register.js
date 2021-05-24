@@ -38,6 +38,7 @@ const Register = ({ history}) => {
                                 <div class="group">
                                     <input type="submit" class="button" value="Sign up"/>
                                 </div>
+                                <a href="/Login" class="button">Already Register ?</a>
                             </form>
                         </div>
                     </div>
