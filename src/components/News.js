@@ -6,22 +6,27 @@ import "firebase/database";
 
 const News = () => {
 
-    const preObject = document.getElementById('object');
+    const comment = app.database().ref('Data/').on('value',function (snap) {
+      //console.log(snap.val());
 
-    const comment = app.database().ref('Data/');
-
-    comment.on('value',(snap)=> {
-      console.log(snap.val());
-      preObject.innerText = JSON.stringify(snap.val(), 2);
-     // return snap;
+      snap.forEach(function(element){
+        document.getElementById("com").innerHTML +=`<div>${Object.values(element.val())}</div>`;
+      })
+      //let commentaire = Object.keys(snap.val());
+    
+      //const obj = JSON.parse(commentaire);
+    
     })
 
 
 
     return( 
         <>
+        <br></br>
         <h1>Commentaire</h1>
-        <p id="preObject"></p>
+        <br></br>
+        <br></br>
+        <div id="com"></div>
         <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
         </>
      );
