@@ -1,30 +1,30 @@
 import React from 'react'
+  
 
-class Trending extends React.Component {      
-      test() {
-        const script = document.createElement("script");
-        script.src = "./test.js";
-        script.async = true;
-        document.body.appendChild(script);
-          };
+  const Trending = () => {
+    
 
-    render() { 
-      return (
-        <div className="tab">
-          <p>test</p>
-       <button className="tablinks" onClick="openView(event, 'btc')" id="defaultOpen">Bitcoin</button>
-      <button className="tablinks" onClick="openView(event, 'eth')">Ethereum</button>
-      <button className="tablinks" onClick="openView(event, 'ltc')">Litecoin</button>
-      <button className="tablinks" onClick="openView(event, 'ada')">Cardano</button>
-      <button className="tablinks" onClick="openView(event, 'dot')">Polkadot</button>
-      <button className="tablinks" onClick="openView(event, 'link')">Chainlink</button>
-      <button className="tablinks" onClick="openView(event, 'bnb')">Binance</button>
-      <button className="tablinks" onClick="openView(event, 'beam')">Beam</button>
-      <button className="tablinks" onClick="openView(event, 'grt')">The Graph</button>
-      <button className="tablinks" onClick="openView(event, 'sol')">Solana</button> */}
-    </div>
-        
-      );
+  return( 
+   <div class="trading-box">
+     <h1>Bienvenue sur le TradingView</h1>
+     <h2>Veuillez séléctionné la Monnaie souhaité</h2>
+     <div class="trading-tab">
+       <a href="/Bitcoin">Bitcoin</a>
+       <a href="/Ethereum">Ethereum</a>
+       <a href="BinanceCoin">Binance Coin</a>
+       <a href="/Cardano">Cardano</a>
+       <a href="/DogeCoin">Dogecoin</a>
+       <a href="/Polkadot">Polkadot</a>
+       <a href="/Litecoin">Litecoin</a>
+       <a href="/UniSwap">Uniswap</a>
+       <a href="/CakeSwap">Cakeswap</a>
+     </div>
+   </div>
+ );
+
   };
-}
+  
+   
+   
+
 export default Trending

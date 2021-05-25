@@ -14,3 +14,11 @@ function openView(evt, coinName) {
 
   
   document.getElementById("defaultOpen").click();
+
+  <TradingViewWidget
+    symbol="BINANCE:BTCUSDT"
+    theme={Themes.DARK}
+    locale="fr"
+    autosize
+    height="500px"
+  />
