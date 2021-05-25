@@ -2,7 +2,7 @@ import React from 'react'
 import TradingViewWidget, { Themes } from 'react-tradingview-widget';
   
 
-  const btc = () => (
+  const dot = () => (
     
 
     <TradingViewWidget
@@ -16,4 +16,4 @@ import TradingViewWidget, { Themes } from 'react-tradingview-widget';
   );
    
 
-export default btc
+export default dot

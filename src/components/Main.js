@@ -15,7 +15,6 @@ import Litecoin from '../components/crypto/Litecoin'
 import Polkadot from '../components/crypto/Polkadot'
 import UniSwap from '../components/crypto/UniSwap'
 import { AuthProvider } from '../firebase/Auth'
-import PrivateRoute from "../firebase/PrivateRoute"
 
 
 const Main = () => (

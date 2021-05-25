@@ -2,7 +2,7 @@ import React from 'react'
 import TradingViewWidget, { Themes } from 'react-tradingview-widget';
   
 
-  const btc = () => (
+  const uni = () => (
     
 
     <TradingViewWidget
@@ -14,4 +14,4 @@ import TradingViewWidget, { Themes } from 'react-tradingview-widget';
   );
    
 
-export default btc
+export default uni
